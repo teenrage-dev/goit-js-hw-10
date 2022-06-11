@@ -12,6 +12,28 @@ body {
   line-height: 1.5;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img{
+  max-width: 100%;
+  width: 300px;
+}
+
+.country-list li img {
+  max-width: 100%;
+  width: 30px;
+  margin-right: 5px;
+}
+
+.country-list li:not(last-child) {
+  margin-bottom: 10px;
+}
+
+
 #search-box {
   font: inherit;
   padding: 8px;
