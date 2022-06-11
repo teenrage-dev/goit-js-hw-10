@@ -1,6 +1,7 @@
 import './css/styles.css';
 import debounce from 'lodash.debounce';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import fetchCountries from './fetchCountries';
 
 const refs = {
     input: document.querySelector('#search-box'),
@@ -8,18 +9,10 @@ const refs = {
     countryInfo: document.querySelector('.country-info'),
 };
 
-const API_URL = 'https://restcountries.com/v3.1';
+
 const DEBOUNCE_DELAY = 300;
 
 refs.input.addEventListener('input', debounce(countryName, DEBOUNCE_DELAY));
-
-function fetchCountries(name) {
-    return fetch(`${API_URL}/name/${name}`)
-        .then(response => {
-            return response.json();
-        })
-        .catch(err => console.dir(err));
-}
 
 
 
